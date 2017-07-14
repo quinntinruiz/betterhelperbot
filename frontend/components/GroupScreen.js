@@ -2,13 +2,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import CreateGroup from './CreateGroup'
 const GroupScreen = ({ groupScreen }) => {
-   
+
     return (
         <div>
-            <text>
+            <span>
                 This is a group screen!
-            
-            </text>
+            </span>
+            <form>
+              <label>
+                Assignment:
+              </label>
+              <label>
+                Assignment:
+              </label>
+            </form>
             <CreateGroup />
 
         </div>
@@ -22,4 +29,3 @@ GroupScreen.propTypes = {
 
 
 export default GroupScreen;
- 

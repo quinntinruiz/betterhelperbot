@@ -1,9 +1,6 @@
-// // import mongoose from 'mongoose';
-// var mongoose = require('mongoose');
+// import mongoose from 'mongoose';
 // var connect = process.env.MONGODB_URI;
 // var Schema = mongoose.Schema;
-//
-//
 // mongoose.connect(connect);
 // mongoose.connection.on('connected',function(){
 //   console.log("connnected to mongodb")
