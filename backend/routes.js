@@ -8,19 +8,19 @@ var Group = mongoose.model('Group', groupSchema)
 
 
 
-router.post('/localhost:3030/addGroup', (req, res)=>{
+router.post('/localhost:3000/addGroup', (req, res)=>{
     var newGroup= new Group({
         assignment: req.body.assignment,
         part: req.body.part,
         problem: req.body.problem,
         location: req.body.location
     })
-    newGroup.save(function(err, result){
-        if(err){
-          callback(err);
-        } else{
-            callback(null, result);
-        }
+    // newGroup.save(function(err, result){
+    //     if(err){
+    //       callback(err);
+    //     } else{
+    //         callback(null, result);
+    //     }
 })
 
 module.exports = router;
