@@ -28,11 +28,25 @@ class CreateGroup extends React.Component {
     handleProblemChange(event) {
         this.setState({ problemInput: event.target.value })
     }
-    handleSubmit(){
-        fetch('localhost:3030' )
-        //put variables in body if post request, params(colon in route) or query (?=)
-
+    handleSubmit() {
+        fetch('localhost:3030/addGroup', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                assignment: this.state.assignmentInput,
+                part: this.state.partInput,
+                location: this.state.locationInput,
+                problem: this.state.problemInput,
+            })
+        })
     }
+    //put variables in body if post request, params(colon in route) or query (?=)
+
+
+
 
     render() {
 
