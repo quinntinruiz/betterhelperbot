@@ -9,8 +9,7 @@ function rootReducer(state = {name: 'Better Helperbot'}, action) {
     }
 }
 
-const rootReducer = combineReducers({
+export default combineReducers({
     rootReducer: rootReducer,
   //  groupScreenReducer: groupScreenReducer
 });
-export default rootReducer;

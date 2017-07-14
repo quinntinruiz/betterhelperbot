@@ -7,16 +7,19 @@ const GroupScreen = ({ groupScreen }) => {
         <div>
             <text>
                 This is a group screen!
-            <CreateGroup />
+            
             </text>
+            <CreateGroup />
+
         </div>
     );
 };
 
-Title.propTypes = {
+GroupScreen.propTypes = {
     name: PropTypes.string,
     groupScreen: PropTypes.any
 };
 
 
 export default GroupScreen;
+ 
