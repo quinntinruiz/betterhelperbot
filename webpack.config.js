@@ -6,18 +6,8 @@ module.exports = {
         './frontend/index'
     ],
     module: {
-        rules: [
-            {
-                test: /\.js$/,
-                exclude: /node_modules/,
-                loader: 'eslint-loader',
-                options: {
-                    configFile: '.eslintrc',
-                    failOnWarning: false,
-                    failOnError: false
-                }
-            },
-            { test: /\.js?$/, loader: 'babel-loader', exclude: /node_modules/ },
+        loaders: [
+            { test: /\.js?$/, loader: 'babel-loader', exclude: /node_modules/, query: { presets: ['es2015', 'react'] } },
             { test: /\.s?css$/, loader: 'style-loader!css-loader!sass-loader' },
         ],
     },
