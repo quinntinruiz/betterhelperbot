@@ -4,17 +4,18 @@ import PropTypes from 'prop-types';
 const GroupScreen = ( { groupScreen } ) => {
     return (
         <div>
-          <text>
+          <span>
             This is a group screen!
-          </text>
+          </span>
         </div>
     );
 };
 
-Title.propTypes = {
+GroupScreen.propTypes = {
     name: PropTypes.string,
     groupScreen: PropTypes.any
 };
 
 
 export default GroupScreen;
+ 
