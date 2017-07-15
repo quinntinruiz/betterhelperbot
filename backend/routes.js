@@ -1,11 +1,20 @@
 const express = require('express');
 const router = express.Router();
 var mongoose = require('mongoose');
+
 var models = require('./models')
 var Student = models.Student
 var Group = models.Group
 
+
 // YOUR API ROUTES HERE
+
+
+var models = require('./models');
+var Student = models.Student;
+var Group = models.Group;
+
+
 
 
 
@@ -24,5 +33,6 @@ router.post('/localhost:3000/addGroup', (req, res) => {
         }
     })
 })
+
 
 module.exports = router;
