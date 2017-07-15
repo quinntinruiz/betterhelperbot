@@ -8,14 +8,6 @@ const GroupScreen = ({ groupScreen }) => {
             <span>
                 This is a group screen!
             </span>
-            <form>
-              <label>
-                Assignment:
-              </label>
-              <label>
-                Assignment:
-              </label>
-            </form>
             <CreateGroup />
 
         </div>

@@ -29,7 +29,7 @@ class CreateGroup extends React.Component {
         this.setState({ problemInput: event.target.value })
     }
     handleSubmit() {
-        fetch('localhost:3030/addGroup', {
+        fetch('localhost:3000/addGroup', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -65,7 +65,7 @@ class CreateGroup extends React.Component {
     }
 };
 
-Title.propTypes = {
+CreateGroup.propTypes = {
     name: PropTypes.string,
     createGroup: PropTypes.any
 };
