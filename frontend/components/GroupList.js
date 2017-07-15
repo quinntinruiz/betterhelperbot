@@ -1,4 +1,4 @@
-import {Student, Group} from '../backend/models'
+import { Student, Group } from '../backend/models'
 import React from 'react';
 import PropTypes from 'prop-types';
 import CreateGroup from './CreateGroup'
@@ -6,18 +6,23 @@ class GroupList extends React.Component {
     constructor() {
         super();
     }
-   render(){
+    render() {
         return (
             <div>
-                <text>
-                wtf do I map? 
+                {Group.find({}, function (err, groups) {
+                    var userMap = {};
+
+                    groups.forEach(function (group) {
+                        
+                        <GroupBox group={group}/>
+                    });
                 
-                </text>
-                <GroupBox/>
+                })}
+                
 
             </div>
         );
-   }
+    }
 };
 
 GroupScreen.propTypes = {
@@ -27,4 +32,4 @@ GroupScreen.propTypes = {
 
 
 export default GroupScreen;
- 
+

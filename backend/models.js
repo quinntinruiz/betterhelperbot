@@ -28,7 +28,14 @@ var studentSchema = new Schema({
   }
 })
 
-
+//simpler than user
+var userSchema= new Schema({
+    name: String,
+    group: {
+    type: mongoose.Schema.ObjectId,
+    ref:"Group"
+  }
+})
 
 
 var models = {

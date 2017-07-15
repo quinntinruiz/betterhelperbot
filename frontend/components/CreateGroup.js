@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+var bodyParser = require('body-parser')
 
 class CreateGroup extends React.Component {
     constructor() {
@@ -15,6 +16,8 @@ class CreateGroup extends React.Component {
         this.handlePartChange = this.handlePartChange.bind(this);
         this.handleLocationChange = this.handleLocationChange.bind(this);
         this.handleProblemChange = this.handleProblemChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+
     };
     handleAssignmentChange(event) {
         this.setState({ assignmentInput: event.target.value })
@@ -30,19 +33,25 @@ class CreateGroup extends React.Component {
     }
     handleSubmit(event) {
         event.preventDefault();
+        console.log(this.state);
+        var data = {
+            assignment: this.state.assignmentInput,
+            part: this.state.partInput,
+            location: this.state.locationInput,
+            problem: this.state.problemInput,
+        };
+        alert('submitting')
         fetch('http://localhost:3000/api/addGroup', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
             },
-            body: {
-                assignment: this.state.assignmentInput,
-                part: this.state.partInput,
-                location: this.state.locationInput,
-                problem: this.state.problemInput,
-            }
+            body: JSON.stringify(data)
         })
+        .then(x=>x.json())
+        .then((x)=>{console.log(x)})
+
     }
     //put variables in body if post request, params(colon in route) or query (?=)
 
@@ -54,7 +63,7 @@ class CreateGroup extends React.Component {
         return (
             <div>
                 <h3>Create Group</h3>
-                <form onSubmit={(e)=>{this.handleSubmit(e)}}>
+                <form onSubmit={(e) => { this.handleSubmit(e) }}>
                     <input type="text" placeholder='Assignment' value={this.state.assignmentInput} onChange={this.handleAssignmentChange} />
                     <input type="text" placeholder='Part' value={this.state.partInput} onChange={this.handlePartChange} />
                     <input type="text" placeholder='Location' value={this.state.locationInput} onChange={this.handleLocationChange} />
@@ -64,8 +73,9 @@ class CreateGroup extends React.Component {
             </div>
         );
     }
-};
+};  
 
+//what does this do?
 CreateGroup.propTypes = {
     name: PropTypes.string,
     createGroup: PropTypes.any
