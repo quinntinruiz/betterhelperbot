@@ -2,6 +2,9 @@ import { Student, Group } from '../backend/models'
 import React from 'react';
 import PropTypes from 'prop-types';
 import CreateGroup from './CreateGroup'
+import groups from '../data/groups'
+import students from '../data/students'
+
 class GroupBox extends React.Component {
     constructor() {
         super();
@@ -51,12 +54,21 @@ class GroupBox extends React.Component {
 
     render() {
         return (
-            <div style={{ borderWidth: .5 }}>
+            <div>
                 <button value={this.state.joined} onClick={joinToggle()}></button>
-                <p>this.props.group.assignment</p>
-                <p>this.props.group.part</p>
-                <p>this.props.group.location</p>
-                <p>this.props.group.problem</p>
+                <span>
+                  <p>this.props.group.assignment</p>
+                </span>
+                   <p>this.props.group.part</p>
+                <span>
+                </span>
+                   <p>this.props.group.problem</p>
+                <span>
+                  Members: Mason, Quinn, Jay, Sunny
+                </span>
+                <span>
+                  <p>this.props.group.location</p>
+                </span>
             </div>
         );
     };
