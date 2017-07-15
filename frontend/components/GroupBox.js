@@ -1,20 +1,26 @@
-import {Student, Group} from '../backend/models'
+import { Student, Group } from '../backend/models'
 import React from 'react';
 import PropTypes from 'prop-types';
 import CreateGroup from './CreateGroup'
-const GroupList = ({ groupScreen }) => {
-   
-    return (
-        <div>
-        </div>
-    );
-};
+import groups from '../data/groups'
+import students from '../data/students'
+class GroupBox extends React.Component {
+    constructor() {
+        super();
+    }
+    render() {
+        return (
+            <div>
 
-GroupScreen.propTypes = {
-    name: PropTypes.string,
-    groupScreen: PropTypes.any
-};
+            </div>
+        );
+    };
+}
+    GroupBox.propTypes = {
+        name: PropTypes.string,
+        groupBox: PropTypes.any
+    };
 
 
-export default GroupScreen;
- 
+    export default GroupBox;
+

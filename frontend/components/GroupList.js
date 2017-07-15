@@ -2,18 +2,22 @@ import {Student, Group} from '../backend/models'
 import React from 'react';
 import PropTypes from 'prop-types';
 import CreateGroup from './CreateGroup'
-const GroupList = ({ groupScreen }) => {
-   
-    return (
-        <div>
-            <text>
-               wtf do I map? 
-            
-            </text>
-            <GroupBox/>
+class GroupList extends React.Component {
+    constructor() {
+        super();
+    }
+   render(){
+        return (
+            <div>
+                <text>
+                wtf do I map? 
+                
+                </text>
+                <GroupBox/>
 
-        </div>
-    );
+            </div>
+        );
+   }
 };
 
 GroupScreen.propTypes = {

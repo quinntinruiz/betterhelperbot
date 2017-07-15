@@ -65,7 +65,7 @@ class CreateGroup extends React.Component {
     }
 };
 
-Title.propTypes = {
+CreateGroup.propTypes = {
     name: PropTypes.string,
     createGroup: PropTypes.any
 };
