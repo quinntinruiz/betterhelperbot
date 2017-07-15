@@ -28,19 +28,20 @@ class CreateGroup extends React.Component {
     handleProblemChange(event) {
         this.setState({ problemInput: event.target.value })
     }
-    handleSubmit() {
-        fetch('localhost:3000/addGroup', {
+    handleSubmit(event) {
+        event.preventDefault();
+        fetch('http://localhost:3000/api/addGroup', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({
+            body: {
                 assignment: this.state.assignmentInput,
                 part: this.state.partInput,
                 location: this.state.locationInput,
                 problem: this.state.problemInput,
-            })
+            }
         })
     }
     //put variables in body if post request, params(colon in route) or query (?=)
@@ -53,7 +54,7 @@ class CreateGroup extends React.Component {
         return (
             <div>
                 <h3>Create Group</h3>
-                <form onSubmit={this.handleSubmit}>
+                <form onSubmit={(e)=>{this.handleSubmit(e)}}>
                     <input type="text" placeholder='Assignment' value={this.state.assignmentInput} onChange={this.handleAssignmentChange} />
                     <input type="text" placeholder='Part' value={this.state.partInput} onChange={this.handlePartChange} />
                     <input type="text" placeholder='Location' value={this.state.locationInput} onChange={this.handleLocationChange} />

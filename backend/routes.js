@@ -18,7 +18,8 @@ var Group = models.Group;
 
 
 
-router.post('/localhost:3000/addGroup', (req, res) => {
+router.post('/addGroup', (req, res) => {
+    console.log(req.body);
     var newGroup = new Group({
         assignment: req.body.assignment,
         part: req.body.part,

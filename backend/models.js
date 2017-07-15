@@ -1,5 +1,7 @@
 
-import mongoose from 'mongoose';
+var connect=process.env.MONGODB_URI;
+var mongoose = require ('mongoose');
+var Schema=mongoose.Schema;
 mongoose.connect(connect);
 mongoose.connection.on('connected',function(){
   console.log("connnected to mongodb")
@@ -34,4 +36,5 @@ var models = {
   Student: mongoose.model("Student",studentSchema)
 }
 
-export default models
+module.exports=models
+
